@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ************************** */
+/* ******* GENERAL ********** */
+/* ************************** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.total {
+  padding: 9rem 0;
+}
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+/* ************************** */
+/* ******* HEADING ********** */
+/* ************************** */
+.heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  animation: headerTitleLeft 1s ease-in;
+}
+
+h1 {
+  color: #1d4ed8;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.underline {
+  width: 20rem;
+  padding: 2px;
+  background-color: #1e40af;
+  margin-bottom: 3rem;
+  animation: underlineRight 1s ease-out;
+}
+.state-btns {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  /* display: flex;
+  gap: 2rem; */
+}
+.btn {
+  border: none;
+  font-size: 1.6rem;
+  background-color: #0284c7;
+  color: #f3e8ff;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+}
+.btn:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.1);
+}
+
+/* ************************** */
+/* *******   MAIN  ********** */
+/* ************************** */
+.grid {
+  display: grid;
+  /* gap: 2rem; */
+  row-gap: 4rem;
+  column-gap: 3rem;
+}
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+.famous-places {
+  padding-top: 6rem;
+  transition: all 0.5s ease-in;
+}
+.place {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 9px;
+  align-items: center;
+  transition: all 0.5s ease-in;
+}
+figure {
+  overflow: hidden;
+  transition: all 0.4s ease-in;
+  /* width: 200px;
+  height: 200px; */
+  border-radius: 5px;
+  object-fit: cover;
+}
+figure img {
+  width: 100%;
+  transition: all 0.4s ease-in;
+  background-size: cover;
+  /* height: 200px; */
+  object-fit: cover;
+}
+img:hover {
+  transform: scale(1.05);
+}
+.content {
+  padding: 2rem 0;
+}
+.content h2 {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.title-underline {
+  width: 9rem;
+  padding: 1.5px;
+  background-color: #0284c7;
+  margin-bottom: 2rem;
+}
+.title-underline:hover {
+  width: 9.5rem;
+}
+.content p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-weight: 500;
+  color: #172554;
+}
+
+/* ************************** */
+/* ******* FOR SCROLL ******* */
+/* ************************** */
+
+.to-top {
+  /* background-color: #1e3a8a; */
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+.icon {
+  width: 4.4rem;
+  height: 4.4rem;
+  background-color: #0284c7;
+  border-radius: 50%;
+  padding: 0.5rem;
+  color: #fff;
+}
+.to-top.show-top-btn {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: 20px;
+}
+
+/* ************************** */
+/* ******* ANIMATIONS ******* */
+/* ************************** */
+
+@keyframes headerTitleLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes underlineRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ***************************** */
+/* ******* MEDIA QUERIES ******* */
+/* ***************************** */
+
+@media (max-width: 48em) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 36em) {
+  .state-btns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .place {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .content {
+    padding: 2rem 2rem;
+  }
+}
+@media (max-width: 24em) {
+  html {
+    font-size: 55%;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+}
